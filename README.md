@@ -143,4 +143,44 @@ print(g1)
 
 ```
 
+```bash
+./mg-download.py –metagenome 4522044.3
+
+```
+
+```bash
+velveth /Volumes/BiochemXsan/scratch/brownlab/bradley/BergMiller_filteredfasta/ 25  -short *.fna
+
+velvetg /Volumes/BiochemXsan/scratch/brownlab/bradley/BergMiller_filteredfasta/
+
+```
+
+```bash
+velveth /Volumes/BiochemXsan/scratch/brownlab/bradley/Ross_filteredFastQ/ 31 -shortPaired -fastq Bovine*R1.fastq Bovine*R2.fastq
+
+velvetg /Volumes/BiochemXsan/scratch/brownlab/bradley/BergMiller_filteredfasta/
+
+```
+
+```bash
+Phython quast.py –o /Volumes/BiochemXsan/scratch/brownlab/Bradley/QUAST/BRV1_assembly/qualityassessment –m 1 BRV1_assembly.fa
+
+```
+
+```bash
+Pyfasta split –n 5 BOR.fa
+
+```
+
+```bash
+PriceTI -spf Sequences.fa 25 200 -picf 3 Seed.fna 1 1 1 -nc 3 -o MethanoBM_output.fa
+
+```
+
+```bash
+blastn -evalue 10 -word_size 7 -db /DB/Test/test.fna -query AssembledContig_BergMillerMethano.fa > AssembledContig_BergMillerMethano.out
+
+```
+
+
 
